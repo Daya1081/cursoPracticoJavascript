@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Precios y descuentos</title>
     <style>
         .cont-cabecera{
             Display: flex;
@@ -16,12 +16,12 @@
             text-align: center;
             padding-bottom: 1rem;
         }
-        /*.titulo2{
+        .titulo2{
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 30px;
             text-align: center;
             padding-bottom: 1rem;
-        }*/
+        }
         .subtitulo{
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 16px;
@@ -65,7 +65,7 @@
             padding-bottom: 1rem;
             padding-top: 2rem;
         }
-        /*.cont-seleccionador{
+        .cont-seleccionador{
             width: 40%;
             Justify-content: center;
             position:absolute;
@@ -74,7 +74,7 @@
             width: 40%;
             Justify-content: center;
             position:absolute;
-        }*/
+        }
         .datosfiguras{
             text-align: center;
         }
@@ -95,12 +95,13 @@
         .resultados{
             text-align: center;
         }
-       /* .content{
+        .content{
             text-align: center;
         }
         .marco{
             width: 500px;
             height: 340px;
+            /*display: inline-block;*/
             border: solid 1px;
             border-radius: 15px;
             margin-bottom: 10px;
@@ -210,7 +211,7 @@
             height: 20px;
             font-size: 16px;
             margin-bottom: 6px;
-        }*/
+        }
     </style>
 </head>
 <body>
@@ -218,7 +219,7 @@
         <div id="contenedor-cabecera" class="cont-cabecera">
             <div id="cabecera" class="cabecera">
                 <div id=titulo class="titulo">
-                    Practica Javascript
+                    Calculadora de Precios y Descuentos
                 </div>
                 <div id="subtitulo" class="subtitulo">
                     Ejercicios desarrollados para el curso practico de javaScript de platzi
@@ -230,81 +231,64 @@
         <div id="contenedor" class="contenedor container">
             <div class="cont1">
                 <div id=titulo2 class="titulo2">
-                    Figuras Geométricas
+                    Precios y Descuentos
                 </div>
                 <div id="subtitulo" class="subtitulo">
-                    Calculadora de áreas y perímetros de las principales figuras geométricas
+                    Calculadora de precios y descuentos de una tienda                
                 </div>
-                <div class="etiqueta">
-                    Seleccione la figura:
-                </div>
-                <div id="selector" class="selector">
-                    <select id="opciones" onchange="solicitarDatos()" class="opciones">
-                        <option value="Sin valor">Sin valor</option>
-                        <option value="Cuadrado">Cuadrado</option>
-                        <option value="Triangulo">Triangulo</option>
-                        <option value="Circulo">Círculo</option>
-                    </select>
-                </div>
-                <div class="selector">           
-                    <select id="tipostriangulo" onchange="solicitaraltura()" disabled>
-                        <option value="Seleccione" >Selecione</option>
-                        <option value="Equilatero">Equilatero</option>
-                        <option value="Isoseles">Isoseles</option>
-                        <option value="Escaleno">Escaleno</option>
-                    </select>     
-                </div>
-                <div id="titFigseleccionada" class="titulo2"></div>
-                <div id="datoscuadrado" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Tamano de los lados: <input id="lado" type="number"></label>
+                <div id="content" class="content">
+                    <div class="margenes">
+                        Seleccione producto a consultar:
                     </div>
-                </div>
-                <div id="datostriangulo" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Lado1: <input id="ladoT1" type="number"></label>
+                    <div class="margenes">
+                        <select id="productos"  class= "diseno-select" onchange="infoProductos()">
+                            <option value="Seleccione" >Selecione</option>
+                            <option value="1">Kit piel perfecta</option>
+                            <option value="2">Kit ojos deslumbrantes</option>
+                            <option value="3">Base y prime</option>
+                        </select>  
                     </div>
-                    <div class="diseno">
-                        <label>Lado2: <input id="ladoT2" type="number"></label>
-                    </div>
-                    <div class="diseno">
-                        <label>Base: <input id="base" type="number"></label>
-                    </div>
-                    <div class="diseno">
-                        <label>Altura: <input id="altura" type="number"></label>
-                    </div>
-                </div>
-                <div id="datoscirculo" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Radio: <input id="radio" type="number"></label>
-                    </div>
-                </div>
-                <div id="resultados" class="resultados">
-                    <div id="area" class="diseno">
-                        <label>Area:</label><label id="rArea"></label>
-                    </div>
-                    <div id="perimetro" class="diseno">
-                        <label>Perimetro:</label><label id="rPerimetro"></label>
-                    </div>
-                </div>
-                <div id="botones" class="botones">
-                    <div class="boton">
-                        <input type="button" value="Calcular area" onclick="calcularAreas()">
-                    </div>
-                    <div class="boton">
-                        <input type="button" value="Calcular perimetro" onclick="calcularPerimetros()">
-                    </div>
-                    <div class="boton">
-                        <input id="baltura" type="button" value="Calcular altura" onclick="calcularAltura()" disabled>
-                    </div>
-                    <div class="boton">
-                        <input type="button" value="Borrar" onclick="borrar()">
+                    <div id="marco" class="marco">
+                        <div id="imagen" class="">
+                        
+                        </div>
+                        <div id="informacion" class="informacion">
+                            <label>Descripcion:</label>
+                            <!--<input id="nom_prod" type="text" class="diseno-input">-->
+                            <div id="nom_prod" class="elem campos-texto"></div>
+                            <label>Precio:</label>
+                            <!--<input id="precio_pro" type="text" class="diseno-input">-->
+                            <div id="precio_pro" class="elem campos-texto"></div>
+                            <label>Descuento:</label>
+                            <input id="desc_pro" type="text" class="diseno-input" value="0">
+                            <div id="calcular" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcular_descuento();">Calcular</div>
+                            <div id="precio_descuento" class="elem salida"></div>
+                            <div id="tit-cupon" class=" elem tit-cupon"> Selecciona un cupon</div>
+                            <select id="cupones1" class="diseno-selectcupon" onchange="calc_precio_cupones()">
+                                <option value="Seleccione" >Selecione</option>
+                                <option value="5">Bienvenidos</option>
+                                <option value="15">Fidelidad</option>
+                                <option value="30">Premium </option>
+                            </select>  
+                            <select id="cupones2" class="diseno-selectcupon" onchange="calc_precio_cupones()">
+                                <option value="Seleccione" >Selecione</option>
+                                <option value="5">Bienvenidos</option>
+                                <option value="20">Verano</option>
+                            </select> 
+                            <select id="cupones3" class="diseno-selectcupon" onchange="calc_precio_cupones()">
+                                <option value="Seleccione" >Selecione</option>
+                                <option value="5">Bienvenidos</option>
+                                <option value="25">SiempreChick</option>
+                                <option value="35">Incomparable</option>
+                            </select> 
+                            <div id="precio_descuentocupon" class="elem salida"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="./figuras.js">
+    <script src="./precios.js">
         
     </script>
 </body>
