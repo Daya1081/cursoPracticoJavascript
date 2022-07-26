@@ -27,6 +27,15 @@
             justify-content: center;
             z-index: 1;
         }
+        .campos-texto {
+            border: none;
+            background-color: PeachPuff;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 220px;
+            max-height: 6px;
+        }
         .container {
             max-width: 1200px;
             margin: auto;
@@ -79,9 +88,176 @@
         .resultados{
             text-align: center;
         }
+        .salida {
+            visibility: hidden;
+        }
+        .elem {
+            display: flex;
+            align-items: center;
+            margin: 0 0 5px;
+            padding: 9px;
+            border-radius: 10px;
+            flex-grow: 1;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+        .inactive {
+            border: none;
+            background-color: coral;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 220px;
+            max-height: 15px;
+            margin: 0 auto;
+        }
+        .marco{
+            width: 280px;
+            height: 310px;
+            /*display: inline-block;*/
+            border: solid 1px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .content{
+            text-align: center;
+        }
+        .diseno-select{
+            border: thin dotted red;
+            border-radius: 25px;
+            width: 300px;
+            height: 30px;
+        }
+        .margenes{
+            margin-bottom: 10px;
+        }
+        .informacion{
+            max-width: 340px;
+            max-height: 300px;
+            padding: 5px;
+            text-align: center;
+        }
+        .diseno-input {
+            border-radius: 15px;
+            width: 225px;
+            height: 20px;
+            margin-bottom: 15px;
+            background-color: PeachPuff;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+        }
+        .separacion{
+            margin:8px;
+        }
+        .csalida{
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    
+    <header>
+        <div id="contenedor-cabecera" class="cont-cabecera">
+            <div id="cabecera" class="cabecera">
+                <div id=titulo class="titulo">
+                    Calculadora de Promedio, moda y mediana
+                </div>
+                <div id="subtitulo" class="subtitulo">
+                    Ejercicios desarrollados para el curso practico de javaScript de platzi
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div id="contenedor" class="contenedor container">
+            <div class="cont1">
+                <div id=titulo2 class="titulo2">
+                    Promedio, moda y mediana
+                </div>
+                <div id="subtitulo" class="subtitulo">
+                    Calculadora de promedios, moda y mediana               
+                </div>
+                <div id="content" class="content">
+                    <div class="margenes">
+                        Seleccione calculo a realizar:
+                    </div>
+                    <div class="margenes">
+                        <select id="calculos"  class= "diseno-select" onchange="pedirdatos()">
+                            <option value="Seleccione" >Seleccione</option>
+                            <option value="1">Promedio</option>
+                            <option value="2">Moda</option>
+                            <option value="3">Mediana</option>
+                            <option value="4">Promedio Ponderado</option>
+                        </select>  
+                    </div>
+                    <div id="marco" class="marco">
+                        <div id="informacion" class="informacion">
+                            <div id="label-general" class="separacion">
+                                <label>Ingresar datos separados por comas (,):</label>
+                            </div>
+                            
+                            <div id="solicitud_datos" class="separacion">
+                                <div id="sol_general">
+                                    <input id="datos" type="text" class="diseno-input" placeholder="Ejm: 0,1,2,3,4">
+                                </div>
+                                <div id="label-ponderado" class="separacion">
+                                    <label>Ingresar ponderados separados por comas (,):</label>
+                                </div>
+                                <div id="sol_ponderado">
+                                    <input id="datos_ponderado" type="text" class="diseno-input" placeholder="Ejm: 0,1,2,3,4" >
+                                </div>
+                            </div>
+                            <div id="boton_calcular" class="separacion">
+                                <div id="calcular" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcular();">Calcular</div>
+                            </div>
+                            <div id="cont_salida">
+                                <div id="cont_promedio">
+                                    <div class="separacion">
+                                        <label id="label-promedio">Promedio:</label>
+                                    </div>
+                                </div>
+                                <div id="cont_moda">
+                                    <div class="separacion">
+                                        <label id="label-moda">Moda:</label>
+                                    </div>
+                                    <!--<div class="separacion">
+                                        <div id="moda" class="elem campos-texto"></div>
+                                    </div>-->
+                                </div>
+                                <div id="cont_mediana">
+                                    <div class="separacion">
+                                        <label id="label-mediana">Mediana:</label>
+                                    </div>
+                                    <!--<div class="separacion">
+                                        <div id="mediana" class="elem campos-texto"></div>
+                                    </div>-->
+                                </div>
+                                <div id="contprom_ponderado">
+                                    <div class="separacion">
+                                        <label id="label-prom_ponderado">Promedio Ponderado:</label>
+                                    </div>
+                                    <!--<div class="separacion">
+                                        <div id="prom_ponderado" class="elem campos-texto"></div>
+                                    </div>-->
+                                </div>
+                                <div id="contsalida">
+                                    <div class="separacion">
+                                        <div id="salida" class="elem campos-texto csalida"></div>
+                                    </div>
+                                </div>
+                                <div id="boton_borrar" class="separacion">
+                                    <div id="limpiar" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="limpiar();">Borrar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./promedio.js">
+        
+    </script>
 </body>
 </html>

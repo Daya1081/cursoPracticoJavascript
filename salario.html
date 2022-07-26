@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salarios</title>
+    <style>
+        .cont-cabecera{
+            Display: flex;
+            Justify-content: center;
+        }
+        .titulo{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 40px;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        .subtitulo{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 16px;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        .contenedor{
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+        .campos-texto {
+            border: none;
+            background-color: PeachPuff;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 220px;
+            max-height: 6px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }  
+        .cont1{
+            width: 60%;
+            min-height: 60px;
+            background-color: rgb(249, 244, 244);
+            box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
+            z-index: 2;
+            margin: 1rem;
+        }     
+        .selector{
+            text-align: center;
+        }
+        .opciones{
+            width: 15rem;
+            font-size: 14px;
+        }
+        .etiqueta{
+            font: 1.2em sans-serif;
+            text-align: center;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+        }
+        .titulo2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 26px;
+            text-align: center;
+            padding-bottom: 1rem;
+            padding-top: 2rem;
+        }
+        .datosfiguras{
+            text-align: center;
+        }
+        .diseno{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            padding: 1rem;
+        }
+        .botones{
+            text-align: center;
+        }
+        .boton{
+            float: left;
+            width: 18%;
+            padding: 1em;
+            text-align: center;
+        }
+        .resultados{
+            text-align: center;
+        }
+        .salida {
+            visibility: hidden;
+        }
+        .elem {
+            display: flex;
+            align-items: center;
+            margin: 0 0 5px;
+            padding: 9px;
+            border-radius: 10px;
+            flex-grow: 1;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+        .inactive {
+            border: none;
+            background-color: coral;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 220px;
+            max-height: 15px;
+            margin: 0 auto;
+        }
+        .marco{
+            width: 280px;
+            height: 310px;
+            /*display: inline-block;*/
+            border: solid 1px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .content{
+            text-align: center;
+        }
+        .diseno-select{
+            border: thin dotted red;
+            border-radius: 25px;
+            width: 300px;
+            height: 30px;
+        }
+        .margenes{
+            margin-bottom: 10px;
+        }
+        .informacion{
+            max-width: 340px;
+            max-height: 300px;
+            padding: 5px;
+            text-align: center;
+        }
+        .diseno-input {
+            border-radius: 15px;
+            width: 225px;
+            height: 20px;
+            margin-bottom: 15px;
+            background-color: PeachPuff;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+        }
+        .separacion{
+            margin:8px;
+        }
+        .csalida{
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="contenedor-cabecera" class="cont-cabecera">
+            <div id="cabecera" class="cabecera">
+                <div id=titulo class="titulo">
+                    Salarios
+                </div>
+                <div id="subtitulo" class="subtitulo">
+                    Ejercicios desarrollados para el curso practico de javaScript de platzi
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
