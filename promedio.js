@@ -92,7 +92,7 @@ function mediana(lista){
     );
     let tamano = lista.length;
     let valor = lista.length/2;
-    if(tamano % 2 == 0){
+    if(tamano % 2 === 0){
         let valor1 = listaordenada[valor-1];
         let valor2 = listaordenada[valor];
         var promedio = (parseInt(valor1)+parseInt(valor2))/2;

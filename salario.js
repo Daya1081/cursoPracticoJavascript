@@ -1,0 +1,82 @@
+const colombia = [];
+
+colombia.push({
+    nombre:"Dayana",
+    salario:"700",
+});
+colombia.push({
+    nombre:"Milagros",
+    salario:"1500",
+});
+colombia.push({
+    nombre:"Sandra",
+    salario:"500",
+});
+colombia.push({
+    nombre:"Desire",
+    salario:"500",
+});
+colombia.push({
+    nombre:"Betza",
+    salario:"800",
+});
+colombia.push({
+    nombre:"Manuel",
+    salario:"2500",
+});
+colombia.push({
+    nombre:"Daniela",
+    salario:"500",
+});
+colombia.push({
+    nombre:"Dulce",
+    salario:"300",
+});
+colombia.push({
+    nombre:"Jesus",
+    salario:"700",
+});
+colombia.push({
+    nombre:"Ronald",
+    salario:"3500",
+});
+colombia.push({
+    nombre:"Eloisa",
+    salario:"600",
+});
+colombia.push({
+    nombre:"Orlando",
+    salario:"400",
+});
+colombia.push({
+    nombre:"Cesar",
+    salario:"340",
+});
+colombia.push({
+    nombre:"Roan",
+    salario:"4000",
+});
+colombia.push({
+    nombre:"Hernan",
+    salario:"3500",
+});
+colombia.push({
+    nombre:"Miguel",
+    salario:"1700",
+});
+colombia.push({
+    nombre:"Nubia",
+    salario:"900",
+});
+colombia.push({
+    nombre:"Jaime",
+    salario:"2000",
+});
+colombia.push({
+    nombre:"Gyomar",
+    salario:"850",
+});
+colombia.push({
+    nombre:"Mariangel",
+    salario:"3700",
+});

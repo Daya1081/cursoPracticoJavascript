@@ -24,24 +24,41 @@
         }
         .contenedor{
             display: flex;
-            justify-content: center;
+            /*justify-content: center;*/
             z-index: 1;
+        }
+        #contenedor1{
+            float: left;
+            width: 400px;
+        }
+        #contenedor2{
+            float:right;
+            width: 400px;
+        }
+        #contenedor3{
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 2rem;
+        }
+        #contenedor4{
+            width: 55%;
+            margin: 0 auto;
+            padding-top: 2rem;
         }
         .campos-texto {
             border: none;
             background-color: PeachPuff;
             color: black;
-            font-size: 16px;
+            font-size: 14px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            max-width: 220px;
-            max-height: 6px;
+            width: 220px;
+            height: 3px;
         }
         .container {
-            max-width: 1200px;
             margin: auto;
         }  
         .cont1{
-            width: 60%;
+            width: 100%;
             min-height: 60px;
             background-color: rgb(249, 244, 244);
             box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
@@ -94,7 +111,7 @@
         .elem {
             display: flex;
             align-items: center;
-            margin: 0 0 5px;
+            margin: 0 0 1px;
             padding: 9px;
             border-radius: 10px;
             flex-grow: 1;
@@ -112,13 +129,19 @@
             max-height: 15px;
             margin: 0 auto;
         }
+        #cont_datos{
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
         .marco{
-            width: 280px;
-            height: 310px;
-            /*display: inline-block;*/
+            width: 800px;
+            height: 500px;
+            display: inline-block;
             border: solid 1px;
             border-radius: 15px;
             margin-bottom: 10px;
+            margin: 0 auto;
         }
         .content{
             text-align: center;
@@ -133,19 +156,19 @@
             margin-bottom: 10px;
         }
         .informacion{
-            max-width: 340px;
+            max-width: 400px;
             max-height: 300px;
             padding: 5px;
             text-align: center;
+            margin: 0 auto;
         }
         .diseno-input {
             border-radius: 15px;
-            width: 225px;
+            width: 90%;
             height: 20px;
-            margin-bottom: 15px;
             background-color: PeachPuff;
             border: none;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
         }
         .separacion{
@@ -153,6 +176,22 @@
         }
         .csalida{
             margin: 0 auto;
+        }
+        .linea{
+            width: 100%;
+            height: 10%;
+            margin-bottom: 1px;
+        }
+        .columna1{
+            width: 30%;
+            float: left;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .columna2{
+            width: 65%;
+            float: right;
+            margin-bottom: 7px;
         }
     </style>
 </head>
@@ -169,7 +208,163 @@
             </div>
         </div>
     </header>
+    <section>
+        <div id="content" class="content">
+            <div id="marco" class="marco">
+                <div id="cont_datos">
+                    <div id="contenedor1" class="contenedor container">
+                        <div class="cont1">
+                            <div id=titulo2 class="titulo2">
+                                Ingresos
+                            </div>
+                            <div id="subtitulo" class="subtitulo">
+                                Ingresos mensuales y porcentaje de ahorro           
+                            </div>
+                            <div id="informacion" class="informacion">
+                                <div class="columna1">
+                                    <label>Salario:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="salario" type="text" class="diseno-input" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Alimentacion:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="alimentacion" type="text" class="diseno-input" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Otros:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="otrosing" type="text" class="diseno-input" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>% Ahorro:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="ahorro" type="text" class="diseno-input" placeholder="0" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contenedor2" class="contenedor container">
+                        <div class="cont1">
+                            <div id=titulo2 class="titulo2">
+                                Egresos
+                            </div>
+                            <div id="subtitulo" class="subtitulo">
+                                Egresos mensuales           
+                            </div>
+                            <div id="informacion" class="informacion">
+                                <div class="columna1">
+                                    <label>Servicios:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="servicios" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Telefonos:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="telefonos" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Arriendo:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="arriendo" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Colegio:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="Colegio" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>T. Credito:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="TC" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Remesas:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="remesas" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Ludicas:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="ludicas" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Credito:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="credito" type="text" class="diseno-input box" placeholder="0" required>
+                                </div>
+                                <div class="columna1">
+                                    <label>Otros:</label><label style="color: red;">*</label>
+                                </div>
+                                <div class="columna2">
+                                    <input id="otros" type="text" class="diseno-input box" placeholder="0" requiered>
+                                </div>                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contenedor3">
+                    <div id="calcular" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcular_totales()">Calcular</div>
+                </div>
+            </div>
+        </div>
+        <div id="contenedor4" class="contenedor container">
+            <div class="cont1">
+                <div id=titulo2 class="titulo2">
+                    Totales y diferencia
+                </div>
+                <div id="subtitulo" class="subtitulo">
+                    Indicador de deficit mensual         
+                </div>
+                <div id="informacion" class="informacion">
+                    <div class="columna1">
+                        <label>Total Ingresos:</label>
+                    </div>
+                    <div class="columna2">
+                        <div id="tot_ingresos" class="elem campos-texto"></div>
+                    </div>
+                    <div class="columna1">
+                        <label>Total ahorrar:</label>
+                    </div>
+                    <div class="columna2">
+                        <div id="tot_ahorro" class="elem campos-texto"></div>
+                    </div>
+                    <div class="columna1">
+                        <label>Restante:</label>
+                    </div>
+                    <div class="columna2">
+                        <div id="restante" class="elem campos-texto"></div>
+                    </div>
+                    <div class="columna1">
+                        <label>Total Gatos</label>
+                    </div>
+                    <div class="columna2">
+                        <div id="tot_gastos" class="elem campos-texto"></div>
+                    </div>
+                    <div class="columna1">
+                        <label>Deficit:</label>
+                    </div>
+                    <div class="columna2">
+                        <div id="deficit" class="elem campos-texto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+<script src="./jquery-3.6.0.min.js"></script>
 <script src="./salario.js"></script>
 <script src="./analisis.js"></script>
 </html>
