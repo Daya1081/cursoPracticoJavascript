@@ -39,7 +39,7 @@
         }  
         .cont1{
             width: 60%;
-            min-height: 60px;
+            min-height: 80px;
             background-color: rgb(249, 244, 244);
             box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
             z-index: 2;
@@ -100,7 +100,7 @@
         }
         .marco{
             width: 500px;
-            height: 340px;
+            height: 350px;
             /*display: inline-block;*/
             border: solid 1px;
             border-radius: 15px;
@@ -145,7 +145,7 @@
             margin-bottom: 15px;
             background-color: PeachPuff;
             border: none;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
         }
         .margenes{
@@ -169,17 +169,17 @@
             font-size: 16px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             max-width: 220px;
-            max-height: 15px;
+            height: 8px;
             margin-bottom: 10px;
         }
         .campos-texto {
             border: none;
             background-color: PeachPuff;
             color: black;
-            font-size: 16px;
+            font-size: 14px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             max-width: 220px;
-            max-height: 6px;
+            height: 2px;
         }
         .salida {
             border: none;
@@ -188,7 +188,7 @@
             font-size: 14px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             max-width: 220px;
-            max-height: 15px;
+            height: 8px;
         }
         .tit-cupon{
             border: none;
@@ -209,7 +209,7 @@
             border-radius: 25px;
             width: 230px;
             height: 20px;
-            font-size: 16px;
+            font-size: 14px;
             margin-bottom: 6px;
         }
     </style>
@@ -218,24 +218,24 @@
     <header>
         <div id="contenedor-cabecera" class="cont-cabecera">
             <div id="cabecera" class="cabecera">
-                <div id=titulo class="titulo">
+                <!--<div id=titulo class="titulo">
                     Calculadora de Precios y Descuentos
                 </div>
                 <div id="subtitulo" class="subtitulo">
                     Ejercicios desarrollados para el curso practico de javaScript de platzi
-                </div>
+                </div>-->
             </div>
         </div>
     </header>
     <section>
         <div id="contenedor" class="contenedor container">
             <div class="cont1">
-                <div id=titulo2 class="titulo2">
+                <!--<div id=titulo2 class="titulo2">
                     Precios y Descuentos
                 </div>
                 <div id="subtitulo" class="subtitulo">
                     Calculadora de precios y descuentos de una tienda                
-                </div>
+                </div>-->
                 <div id="content" class="content">
                     <div class="margenes">
                         Seleccione producto a consultar:
@@ -282,6 +282,7 @@
                                 <option value="35">Incomparable</option>
                             </select> 
                             <div id="precio_descuentocupon" class="elem salida"></div>
+                            <div id="salir" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="salir();">Salir</div>
                         </div>
                     </div>
                 </div>

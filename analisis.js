@@ -158,5 +158,30 @@ function calcular_totales(){
 
     }
 }
+function salir(){
+    var pagina = 'menu.html';
+    document.location.href=pagina;
+}
+function borrar(){
+    alert("entro");
+    document.getElementById("salario").value="";
+    document.getElementById("ahorro").value="";
+    document.getElementById("otrosing").value="";
+    document.getElementById("servicios").value="";
+    document.getElementById("arriendo").value="";
+    document.getElementById("Colegio").value="";
+    document.getElementById("TC").value="";
+    document.getElementById("remesas").value="";
+    document.getElementById("otros").value="";
+    document.getElementById("alimentacion").value="";
+    document.getElementById("credito").value="";
+    document.getElementById("ludicas").value="";
+    document.getElementById("telefonos").value="";
+    document.getElementById("tot_ingresos").innerHTML = "";
+    document.getElementById("tot_ahorro").innerHTML = "";
+    document.getElementById("tot_gastos").innerHTML = ""; 
+    document.getElementById("restante").innerHTML = "";
+    document.getElementById("deficit").innerHTML = "";
+}
 
 

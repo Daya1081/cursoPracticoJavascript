@@ -91,7 +91,10 @@ function calcular_descuento(){
     elemento.classList.add('salida');
     document.getElementById("precio_descuento").innerHTML = "Precio con descuento: " + precio_descuento;
 }
-
+function salir(){
+    var pagina = 'menu.html';
+    document.location.href=pagina;
+}
 function calc_precio_cupones(){
     var precio_original = document.getElementById("precio_pro").innerHTML;
     var x = document.getElementById("productos").value;

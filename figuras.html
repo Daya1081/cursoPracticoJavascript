@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <style>
         .cont-cabecera{
             Display: flex;
@@ -79,103 +80,312 @@
         .resultados{
             text-align: center;
         }
-        
-        
+        .content{
+            text-align: center;
+        }
+        .marco{
+            width: 500px;
+            height: 340px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        #imagenC{
+            height: 305px;
+            width: 220px;
+            float: left;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+        #imagenT{
+            height: 305px;
+            width: 220px;
+            float: left;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+        #imagenCi{
+            height: 305px;
+            width: 220px;
+            float: left;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+        .informacion{
+            width: 230px;
+            height: 305px;
+            padding: 5px;
+            float: right;
+            text-align: left;
+        }
+        .elem {
+            display: flex;
+            align-items: center;
+            margin: 0 0 5px;
+            padding: 9px;
+            border-radius: 10px;
+            flex-grow: 1;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+        .inactive {
+            border: none;
+            background-color: coral;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 100px;
+            max-height: 15px;
+            margin-bottom: 10px;
+        }
+        .campos-texto {
+            border: none;
+            background-color: PeachPuff;
+            color: black;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 228px;
+            max-height: 6px;
+        }
+        .salida {
+            border: none;
+            background-color: PaleVioletRed;
+            color: black;
+            font-size: 14px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            max-width: 228px;
+            max-height: 15px;
+        }
+        .diseno-input {
+            border-radius: 15px;
+            width: 225px;
+            height: 20px;
+            margin-bottom: 15px;
+            background-color: PeachPuff;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+        }
+        .imagen1{
+            background-image: url("./imagenes/cuadrado.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            z-index: 1;
+        }
+        .imagen2{
+            background-image: url("./imagenes/triangulo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+        }
+        .imagen3{
+            background-image: url("./imagenes/circulo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+        }
     </style>
 </head>
 <body>
     <header>
         <div id="contenedor-cabecera" class="cont-cabecera">
-            <div id="cabecera" class="cabecera">
-                <div id=titulo class="titulo">
-                    Practica Javascript
-                </div>
-                <div id="subtitulo" class="subtitulo">
-                    Ejercicios desarrollados para el curso practico de javaScript de platzi
-                </div>
-            </div>
+            <div id="cabecera" class="cabecera"></div>
         </div>
     </header>
     <section>
         <div id="contenedor" class="contenedor container">
             <div class="cont1">
-                <div id=titulo2 class="titulo2">
-                    Figuras Geométricas
-                </div>
-                <div id="subtitulo" class="subtitulo">
-                    Calculadora de áreas y perímetros de las principales figuras geométricas
-                </div>
-                <div class="etiqueta">
-                    Seleccione la figura:
-                </div>
-                <div id="selector" class="selector">
-                    <select id="opciones" onchange="solicitarDatos()" class="opciones">
-                        <option value="Sin valor">Sin valor</option>
-                        <option value="Cuadrado">Cuadrado</option>
-                        <option value="Triangulo">Triangulo</option>
-                        <option value="Circulo">Círculo</option>
-                    </select>
-                </div>
-                <div class="selector">           
-                    <select id="tipostriangulo" onchange="solicitaraltura()" disabled>
-                        <option value="Seleccione" >Selecione</option>
-                        <option value="Equilatero">Equilatero</option>
-                        <option value="Isoseles">Isoseles</option>
-                        <option value="Escaleno">Escaleno</option>
-                    </select>     
-                </div>
-                <div id="titFigseleccionada" class="titulo2"></div>
-                <div id="datoscuadrado" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Tamano de los lados: <input id="lado" type="number"></label>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cuadrado</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Triángulo</button>
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Círculo</button>
                     </div>
-                </div>
-                <div id="datostriangulo" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Lado1: <input id="ladoT1" type="number"></label>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                        <div id="content" class="content">
+                            <div id="marco" class="marco">
+                                <div id="imagenC" class=""></div>
+                                <div id="informacion" class="informacion">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label>Lados:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="ladosC" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="areaC" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularAreaC();">Área</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="perimetroC" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularPerimetroC();">Perímetro</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label>Resultado:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="resultado" class="elem salida"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="borrarC" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="borrarC();">Borrar</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="salir" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="salir();">Salir</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="diseno">
-                        <label>Lado2: <input id="ladoT2" type="number"></label>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                        <div id="content" class="content">
+                            <div id="marco" class="marco">
+                                <div id="imagenT" class=""></div>
+                                <div id="informacion" class="informacion">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="tipo"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label id="lado1L">Lado1:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="lado1" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label id="lado2L">Lado2:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="lado2" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label>Base:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="base" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label id="laltura">Altura:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="altura" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="vali" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="validar();">Validar</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="areaT" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularAreaT();">Área</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="perimetroT" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularPerimetroT();">Perímetro</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label id="resultadol">Resultado:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="resultadoT" class="elem salida"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="borrarT" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="borrarT();">Borrar</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="salir" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="salir();">Salir</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="diseno">
-                        <label>Base: <input id="base" type="number"></label>
-                    </div>
-                    <div class="diseno">
-                        <label>Altura: <input id="altura" type="number"></label>
-                    </div>
-                </div>
-                <div id="datoscirculo" class="datosfiguras">
-                    <div class="diseno">
-                        <label>Radio: <input id="radio" type="number"></label>
-                    </div>
-                </div>
-                <div id="resultados" class="resultados">
-                    <div id="area" class="diseno">
-                        <label>Area:</label><label id="rArea"></label>
-                    </div>
-                    <div id="perimetro" class="diseno">
-                        <label>Perimetro:</label><label id="rPerimetro"></label>
-                    </div>
-                </div>
-                <div id="botones" class="botones">
-                    <div class="boton">
-                        <input type="button" value="Calcular area" onclick="calcularAreas()">
-                    </div>
-                    <div class="boton">
-                        <input type="button" value="Calcular perimetro" onclick="calcularPerimetros()">
-                    </div>
-                    <div class="boton">
-                        <input id="baltura" type="button" value="Calcular altura" onclick="calcularAltura()" disabled>
-                    </div>
-                    <div class="boton">
-                        <input type="button" value="Borrar" onclick="borrar()">
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                        <div id="content" class="content">
+                            <div id="marco" class="marco">
+                                <div id="imagenCi" class=""></div>
+                                <div id="informacion" class="informacion">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label>Radio:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <input id="radioCi" type="text" class="diseno-input" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="areaCi" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularAreaCi();">Área</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="perimetroCi" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="calcularPerimetroCi();">Perímetro</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label>Resultado:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="resultadoCi" class="elem salida"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div id="borrarCi" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="borrarCi();">Borrar</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="salir" class="elem inactive" onmouseover="this.style.background='PapayaWhip';" onmouseout="this.style.background='Coral';" onclick="salir();">Salir</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="./figuras.js">
-        
-    </script>
+    <script src="./figuras.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
